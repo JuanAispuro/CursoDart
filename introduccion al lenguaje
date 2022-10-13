@@ -1,0 +1,140 @@
+Dart
+
+ -- Caracteristicas --
+
+• Orientado a objetos
+• Ahead and just in time (Compilación)
+• Hot reload (Permite actualizar el código rápido y ver los cambios rapido.)
+• Sintaxis sencilla
+• Reactivo (asincroía).
+• Accesible
+
+El código sera transformado a lenguaje maquina con ahead.
+Es (OpenSource).
+
+ - Productivo
+ - Rápido
+ - Portable
+ - Accesible
+ - Reactivo
+
+ Mucha similitud con java y los lenguajes de programación orientados a objetos.
+
+ -- Que se puede hacer con dart --
+
+ Aplicaciones moviles con Flutter (JIT,AOT,VM).
+ Aplicaciones de escritorio con Flutter y Dart Native. (JIT,AOT,VM).
+ Despliegue de servidores con Angel y Aqueduct (Multi-threaded).
+ Aplicaciones web con Flutter, Dart2js, AngularDart (Transcompile).
+
+-- DartPad --
+Herramienta en linea para probar dart.
+
+
+-- Comentarios -- 
+ //Un método es una sección de código que sera llamada
+// void main() {
+//   print("Hola Juan");//Imprimir cualquier elemento tipo cadena.  
+
+//Comentario largo
+  /* 
+   * 
+   * Comentar varias cosas
+   */
+ ///Comentario de 3 barras (Para mejor visibilidad).
+  
+// }
+
+ -- Variables --
+   //Variables
+  
+  //Tipos de variables
+  
+  //String
+  String cadena =  "Hola juancho";
+  String cadena2 = 'adios juancho';
+  print(cadena2);
+  
+  // Numeros Enteros
+  int numeroEntero = 10;
+  int numeroEntero2 = -12;
+  
+  print(numeroEntero2);
+  
+  //Numeros Reales
+  double decimales = 10.5;
+  double numeroDecimal = 20;
+  print(decimales);
+  
+  // Booleanos variable que almacena estados.
+  bool valor = true;
+  bool valor2 = false;
+  
+  // Tipado Dinamico
+  String ejemplo = 'Hola mundo';
+  ejemplo = 'Juancho';
+  print(ejemplo);
+  
+  // Dynamic (Almacena cualquier tipo de valor en especifico)
+  dynamic dinamico = "Lunes";
+  dinamico = "Martes";
+  dinamico = 10000;
+  dinamico = false;
+  print(dinamico);
+  
+  // num se puede poner cualquier tipo de numero
+  num numerico = 90;
+  numerico = 70.8;
+  
+  // var (Convierte cualquier variable al tipo que se pone.)
+  // Pero no puede cambiar en diferentes cadenas.
+  var variable = "comida";
+  variable = "almuerzo";
+  
+  // Constantes 
+  
+  // var
+  // const
+  // Variable constante, de forma que no se podra cambiar el valor.
+  const String nombre = "juan"
+    
+  // final es el mismo que const
+    final int decena = 10;
+    
+  // La diferencia entre (const) y (final) es que const tiene que tener un valor.
+  // y final es inicializado con un valor en cualquier momento.
+  
+ -- Operadores --
+   // Operadores Arítmeticos
+  
+  // Suma
+  
+  int suma = 3 + 6;
+  print(suma); 
+  
+  // Resta
+  
+  double resta = 90.5 - 30.2;
+  print(resta);
+  
+  // Multiplicación
+  int multiplicacion = 10 * 8;
+  print(multiplicacion);
+  
+  // Division
+  double division = 9/4;
+  print(division);
+  
+  // Modulo
+  double modulo = 43 % 6;
+  print(modulo);
+  
+  
+  // Operadores de relacion (Comparar las variables)
+  // igual que (==) ej 8 == 8 (true) 
+  // distinto (!=) ej  9 != 8 (true)
+  // Mayor que (>) ej  7 > 7 (false)
+  // Mayor igual que (>=) eje 7 >= 7 (true)
+  // Menor que (<) ej 9 < 10 (true)
+  // Menor igual que (<=) ej 6 <= 8 (true)
+  

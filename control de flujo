@@ -1,0 +1,95 @@
+ -- Sentencias if --
+
+  //if,elseif y else
+  int variable1 = 8;
+  int variable2 = 6;
+
+  if(variable1>variable2){
+    print("La variable 1 es mayor a la variable 2");
+  } else if(variable2>variable1){
+    print("La variable 2 es mayor a la variable 1");
+  }else{
+    print("las variables son iguales.");
+  }
+    -- Switch Case --
+    //switch Case
+  int variable = 3;
+  
+  switch(variable)
+  {
+    case 1: 
+      print("lunes");
+      break;
+    case 2: 
+      print("Martes");
+      break; 
+     case 3: 
+      print("Miercoles");
+      break;
+      case 4: 
+      print("Jueves");
+      break;
+      case 5: 
+      print("Viernes");
+      break;
+      case 6: 
+      print("Sabado");
+      break;
+      case 7: 
+      print("Domingo");
+      break;
+      
+    default:
+      print("No hay más fin de semana");
+      break;
+  } 
+  
+    -- Bucles while y do while --
+  //Bucles while y do while
+  int variable = 6;
+  while(variable > 6){
+    print("Hello there!");
+    variable = variable - 1;
+  }
+  // Cuando los dos variables son las mismas en el 
+  // do - while primero ejecuta y luego pregunta.
+  int variable2 = 6; 
+    do{
+    
+    print("la variable es verdadera");
+      variable2 = variable2 - 1;
+    }while(variable2 > 6);
+  
+  -- Ciclos for y foreach --
+   //for
+  for (int i = 0; i < 5; i++) {
+    // el $ es para mostrarlo aunque se declare en el for.
+    // print("El valor de i es: $i");
+  }
+
+  //ForEach
+  final lista = ['Juan', 'Valeria', 'Jose', 'Ana'];
+  lista.forEach((elemento) {
+    print(elemento);
+  });
+
+  -- Break y continue --
+  //Break y Continue
+  for(int i = 1; i <= 10; i++){
+    //Numeros que son multiplos de 10 
+    if(10 % i == 0){
+    continue;//Con continue se mueve las iteraciones
+      // si no se logran se manda por eso los
+      // que no son multiplos se muestran.
+    }
+        print("El valor de i es: $i");
+
+  }
+
+  -- Assert -- 
+Controlar si una variable cumple con una regla en especifica.
+Comando assert (dart --enable-asserts (Posición del assert));
+Assert se usa para el momento del desarrollo.
+
+
+
