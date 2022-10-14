@@ -1,3 +1,23 @@
+-- Clases --
+Clases elementos que generaran nuestros objetos.
+void main() {
+  int numero = 10;
+
+  //cadena
+  String cadena = "numero";
+  bool verdad = true;
+  //Concatenacion
+  //El .Tostring convierte numero a cadena.
+  print(cadena + numero.toString() + verdad.toString());
+}
+class Objeto{
+  //Propiedades
+  //ej. color, tamano, etc.
+  //metodos
+  //mostrar, crear, etc.
+}
+
+-- Constructores --
 void main() {
   //Llamamos al constructor
   Persona persona1 = Persona(nombre: "Juan", edad: 21);

@@ -1,3 +1,4 @@
+
 -- Funciones y Procedimientos -- 
   //Método
   void imprmir(){
@@ -15,13 +16,104 @@
   
   print(suma());
   
-  //Función con dos parametros
+  //Función con dos parametros y Asignación de parametros
   double multiplicacion(double primer, double segundo){
     return primer * segundo;
   
   }
   print(multiplicacion(5,7));
   
+  //asignacion deparametros nombrados
   double restar({double primer, double segundo}){
-    
+    return primer - segundo;
   }
+
+  print(resta(segundo: 5, primer: 10));
+
+//asignacion de parametros opcionales
+  double division(double primer, [double segundo]){
+    return (primer/segundo);
+  }
+
+  print(division(9,3));
+
+
+
+-- Funciones anonimas --
+  //enviar una función como parametro
+  
+  //Aqui se obtiene una función por parametro
+  void ejecutar(Function funcion){
+    funcion();
+  }
+  
+  void suma(int a, int b){
+    print(a+b);
+  }
+ 
+  void ejecutarValor(Function(int) funcion,int valor){
+    funcion(valor);
+  }
+  
+  
+  //funcion anonima
+    ejecutar((){
+      print("Hola chavos");
+      suma(5,4);
+    }); 
+  
+  ejecutarValor((x){
+    print(x);
+    suma(7,8);
+  },60);
+
+-- Arrow Functons --
+ //Funciones Lambda o funciones de una sola expresion
+  // se pone todo en una lina de codigo.
+  
+  //Normal
+  int suma(int a, int b){
+    print(a+b);
+    return a+b;
+  }
+  
+  //Arrow Function  (=>) semejante al return.
+  int resta(int a, int b) => a-b;
+  
+  print (resta(10,4));
+  
+  
+  //---------------------------------------
+  void anonima(Function metodo) => metodo();
+  
+  void anonima1(Function metodo){
+    metodo();
+  }
+ 
+  anonima(() => suma(7,8));
+  
+  anonima1((){
+    suma(7,8);
+  });
+-- TypeDef --
+void main(){
+  //Utilizar cuando es implementada dificilemente
+  // Se usa cuando se quieren afuera de las clases.
+  void suma(int x, int y) => print(x+y);
+  void resta(int x, int y) => print(x-y);
+  void multiplicacion(int x, int y) => print(x*y);
+  void division(int x, int y) => print(x/y);
+  
+  Operacion funciones;
+  funciones = suma;
+  
+  funciones(10,10);
+  
+  funciones = multiplicacion;
+  funciones(2,4);
+  
+}
+
+
+//Alias de funcion es como el enum pero para las funciones.
+typedef Operacion(int x, int y);
