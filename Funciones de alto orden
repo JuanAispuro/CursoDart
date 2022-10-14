@@ -1,0 +1,27 @@
+-- Funciones y Procedimientos -- 
+  //Método
+  void imprmir(){
+    //Código dentro de la función.
+    print("Pinche leo");
+  }
+  
+  //Ejecutamos la función.
+  imprmir();
+  
+  //Retornar un valor en la función (otro método).
+  int suma(){
+    return 5+5;
+  }
+  
+  print(suma());
+  
+  //Función con dos parametros
+  double multiplicacion(double primer, double segundo){
+    return primer * segundo;
+  
+  }
+  print(multiplicacion(5,7));
+  
+  double restar({double primer, double segundo}){
+    
+  }
