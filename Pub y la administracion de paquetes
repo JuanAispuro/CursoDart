@@ -1,0 +1,20 @@
+    -- Pubspec.yaml --
+Administrar las librerias y dependencias del programa.
+Se puede configurar otros programas.
+
+yaml - Gestiona las dependencias y librerias de nuestro proyecto.
+pub get - ver las dependencias.
+pub upgrade - actualizar las dependencias
+usar primero dart antes de pub.
+
+Al guardar el archivo la mayoria se actualiza automaticamente.
+
+Dependencias 
+
+-- Pub --
+Donde estan las librerias pub.dev
+
+-- Adicionado y utilizando la libreria --
+
+
+

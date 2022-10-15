@@ -1,0 +1,142 @@
+-- Operadores 2 --
+    void main() {
+    //Operadores aritmeticos
+    int numero = 10;
+    numero++; //Incrementa numero en cada momento
+    print(numero);
+
+    numero = numero + 5;
+    //Operador aritmetico de asignacion
+    numero += 5;
+    print(numero);
+
+    //Operadores logicos
+    int numero2 = 20;
+    /* if (numero > numero2) {
+        print("numero es mayor a numero2 ");
+        } else {
+        print("numero2 es mayor que numero.");
+        }*/
+
+    //otra forma de usar un if
+    numero > numero2
+        ? print("numero es mayor a numero2 ")
+        : print("numero2 es mayor que numero.");
+
+    //Operador  asignacion con comparación entre elementos.
+    //Valida si una variable pertenece a un tipo de objeto.
+    if (numero is String) {
+        print("numero es un String");
+    } else {
+        print("numero no es un String");
+    }
+    //Poner el ? para que agarre sin tener que ponerle un valor directo.
+    String? nombre;
+    
+    print(nombre ?? "No hay nombre");
+    }
+
+-- Notacion en cascada -- 
+    void main() {
+    Estudiante estudiante = Estudiante();
+    estudiante.lee();
+    estudiante.escribe();
+    estudiante.estudia();
+
+    //Operación en cascada
+    Estudiante estudiante2 = Estudiante()
+        ..escribe()
+        ..lee()
+        ..estudia();
+    }
+
+    class Estudiante {
+    void lee() {
+        print(" El estudiante lee un libro.");
+    }
+
+    void escribe() {
+        print(" El estudiante escribe un libro.");
+    }
+
+    void estudia() {
+        print(" El estudiante estudia para el  examen.");
+    }
+    }
+
+-- Spread Operator --
+Permiten realizar acciones dentro de las listas/colecciones de datos.
+    void main() {
+    List<int> pares = [2, 4, 6, 8, 10];
+    List<int> impares = [1, 3, 5, 7, 9];
+
+    List<int> numeros = [];
+
+    numeros.addAll(pares);
+    numeros.addAll(impares);
+    // print(numeros);
+    //Forma para hacer lo de numeros addall, pero con spread.
+    List<int> spread = [...impares, ...pares, 11, 12, 13, 14, 15];
+    print(spread);
+    //Juntar spread con if/for.
+    // if
+    List<int> spread2 = [
+        ...pares,
+        if (impares.length > 5) ...impares,
+        11,
+        12,
+        13,
+        14,
+        15
+    ];
+
+    print(spread2);
+
+    // for
+    List<int> spread3 = [
+        ...impares,
+        for (int i = 0; i < pares.length; i++)
+        if (pares[i] > 5) pares[i],
+        11,
+        12,
+        13,
+        14,
+        15
+    ];
+    print(spread3);
+    }
+
+-- Metadatos --
+    void main() {
+    //override {Una clase, objeto o dato del override no esta bajo el control del programador.}
+
+    //Depreated {La clase, objeto o dato que tiene el decrapted esta obsoleto.}
+
+    @override //Dar referencia al programador que no se tiene el control solo se utiliza.
+    void Holamundo() {
+        print("Hola mundo");
+    }
+    //Metadato todo, son una clase especial para dar referencias a otros programadores
+    // y guiarse.
+
+    @Todo("Juan", "Realizar una multi aquí.")
+    void multiplicacion() {}
+
+    //Se ocupa el constructor que es el ().
+    @Elimiar()
+    void Eliminarcodigo(){}
+    }
+
+    class Todo {
+    final String name;
+    final String description;
+
+    //Constructor con constante, lo cual logra hacerse como metadato.
+    const Todo(this.name, this.description);
+    }
+
+    class Elimiar {
+    const Elimiar();
+    }
+
+

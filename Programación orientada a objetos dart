@@ -52,3 +52,20 @@ class Persona {
     print(edad);
   }
 }
+
+-- Getters y Setters --
+Instanciar clases en otros archivos.
+Los getters y setters son para obtener las variables de las privadas.
+
+-- Herencia -- 
+Utilizar la clase padre y darselas a las hijo
+Solo se puede heredar solo una clase, pero las propiedades si.
+
+
+-- Interfaces --
+Conocida como herencia multiple o capa de abstraccion.
+La clase abstracta hace referencia a la clase, pero no se pueden instanciar.
+(implements)
+
+-- Mixins --
+Permite usar las propiedades de las clases obtenidas (with).

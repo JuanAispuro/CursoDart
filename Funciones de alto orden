@@ -95,6 +95,9 @@
   anonima1((){
     suma(7,8);
   });
+
+
+  
 -- TypeDef --
 void main(){
   //Utilizar cuando es implementada dificilemente

@@ -33,7 +33,7 @@
     },
     {
       "name": "collection",
-      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/collection-1.16.0",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/collection-1.17.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -81,7 +81,7 @@
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-4.0.1",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -153,7 +153,13 @@
     },
     {
       "name": "pub_semver",
-      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pub_semver-2.1.1",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/pub_semver-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "random_string",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/random_string-2.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -255,7 +261,7 @@
     },
     {
       "name": "watcher",
-      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/watcher-1.0.1",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/watcher-1.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
@@ -284,7 +290,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-14T18:07:01.025170Z",
+  "generated": "2022-10-15T19:16:02.454340Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
