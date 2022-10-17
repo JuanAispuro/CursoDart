@@ -1,0 +1,72 @@
+-- Errores de desarrollo --
+Bloques try - catch (Capturar los errores que puede haber en un programa y no es necesario poner en todo el codigo.)
+De manera que usarlo cuando de verdad pienses que podria haber un error en la aplicacion.
+try{
+    int numero = 10;
+    int? numero2;
+
+  print(numero / numero2!);
+  }catch(e){
+    print("Ocurrio una excepcion");
+  }
+
+
+-- Excepciones, Catch --
+try, catch, Throw, pruebas, etc son lo que se vera a lo largo de la seccion.
+
+-- Throw --
+ try{
+  int numero = 10;
+  int numero2 = 0;
+
+   if(numero2 <= 0){
+    throw Exception("El numero2 no puede ser negativo");
+   }
+  print(numero/numero2);  
+  }catch(e){
+    print(e);
+  }
+
+-- Finally --
+Codigo que se ejecuta siempre, sin importar si hubo un error o no.
+
+EL Control de Excepciones y pruebas tratar de capturar las Excepciones correspondientes y luego testearlo para volver a buscar.
+
+-- Testing y Unit Test -- 
+import 'dart:html';
+import 'dart:math';
+
+import 'package:test/test.dart';
+
+Object division(int x, int y) {
+  try {
+    if (y == 0) {
+      throw "Division entre cero";
+    }
+    return (x / y + 1).toString();
+  } catch (e) {
+    return e;
+  }
+}
+
+void main() {
+  group("Algoritmo  de division", () {
+    //(){} función anonima, causal prueba, matcher resultado del valor actual.
+    test("division entre cero", () {
+      //expect(casual, matcher);;
+      expect(division(5, 0), "Division entre cero.");
+    });
+
+    test("division entre no cero", () {
+      //expect(casual, matcher);;
+      expect(division(10, 5), 2);
+    });
+
+    test("division entre entero", () {
+      expect(division(15, 6), "2.8");
+    });
+  });
+  
+}
+
+

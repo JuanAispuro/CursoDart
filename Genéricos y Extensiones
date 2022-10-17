@@ -1,0 +1,127 @@
+ - Genericidad -- 
+Permite tener los elementos totalmente dinamicos y utilziarlos, para poder almacenar cualquier informacion en cualquier tipo de dato.
+
+Los elementos de tipo dynamic son genericos, es un objeto muy particular.
+
+Genericos funcionaran al momento de compilación.
+Dinamicos funcionaran al moment ode ejecucion.
+
+
+-- Elementos Genéricos en Funciones y colecciones -- 
+Iterable permite iterar sobre una coleccion, es decir, recorrerla.  
+void main() {
+//   //No agarra por que de forma normal la lista es de valores dinamicos
+  List lista = [1, 2, 3];
+
+  dynamic elemento;
+  // print(elemento);
+  // print(lista is List<int>
+  Estacion estacion = Estacion.soleado;
+  print(estacion);
+  T leerEstaciones<T>(String str, Iterable<T> estaciones) {
+    return estaciones
+        .firstWhere((element) => element.toString().split('.')[1] == str);
+  }
+  //Aqui me retornara un elemento tipo estacion y la coleccion de estaciones.
+  //Encontrara el estado.lluvioso y como la satisface regresa la estacion.lluvioso.
+
+  estacion = leerEstaciones<Estacion>('lluvioso', Estacion.values);
+  print(estacion);
+}
+
+enum Estacion { soleado, lluvioso, nublado }
+
+-- Elementos Genéricos en POO --
+Implementar las clases genericas o objetos propios a otros, utilziando stack
+conexiones de tipo pila estructura de el primero que entra es el primero en salir.
+    void main() {
+    Stack<int> pila1 = Stack<int>();
+    pila1.push(10);
+    pila1.push(20);
+    pila1.push(30);
+    pila1.push(40);
+
+    //dynamic tiene errores más
+    Stack<String> pila2 = Stack<String>();
+    pila2.push("10");
+    pila2.push("20");
+    pila2.push("30");
+    pila2.push("40");
+
+    print(pila1.pop());
+    pila1.show();
+    }
+
+    //{T} es cualquier tipo.
+    class Stack<T> {
+    List<T> _stack = [];
+    //Iteramos con función fecha.
+    void show() => print(_stack);
+    void push(T value) => _stack.add(value); //Regresa el valor\
+    T pop() => _stack.removeLast(); //Retorna el stack removido.Stack
+    }
+
+-- Extensiones --
+Permiten a nosotros desarrollar codigo implmentado en una libreria o codigo fuente de dart
+    //Extension (on) nombre donde se aplicara.
+    extension on String{ 
+    //metodo
+    //Extensiones hace esto pero llamando extesiones.
+    int ContarPuntos(){
+        int contador = 0;
+        for(int i = 0; i<this.length; i++){
+        if(this[i] == '.'){
+            contador++;
+        }
+        }
+        return contador;
+    }
+    
+    }
+    void main() {
+    String nombrePuntos = "Juan..................";
+    //Quiero imprimir cuantos puntos tiene.
+    print(nombrePuntos.ContarPuntos());
+    }
+
+-- Implementando extesiones en librerias externas --
+Importar extensiones con pub get
+instalamos la dependencia randomwords.
+
+    import 'package:random_words/random_words.dart';
+
+    //nimodo no agarra por que no hay version null-safety
+
+    extension on WordPair{
+    String initials(){
+        return "${this.first[0]}${this.second[0]}";
+    }
+    }
+    void main() {
+    WordPair word = WordPair.random();
+    print(word.initials());
+}
+
+-- Extensiones Genericas --
+//La extension almacena cualquier tipo de dato.
+    extension MiLista<T> on List<T> {
+    //Va de 3 en 3
+    int get tripleLength => 3 * this.length;
+
+    String concatElemento() {
+        //Concatena los numeros y les agrega un {-}
+        String x = "";
+        for (int i = 0; i < this.length; i++) {
+        x = "$x-${this[i]}";
+        }
+        return x;
+    }
+    }
+
+    void main() {
+    List<int> numeros = [1, 2, 3, 4, 5, 6, 7];
+
+    print(numeros.tripleLength);
+    print(numeros.concatElemento());
+    }
+

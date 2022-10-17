@@ -164,6 +164,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "random_words",
+      "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/random_words-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "1.22"
+    },
+    {
       "name": "shelf",
       "rootUri": "file:///C:/Users/autod/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/shelf-1.4.0",
       "packageUri": "lib/",
@@ -290,7 +296,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-15T19:16:02.454340Z",
+  "generated": "2022-10-17T04:56:32.761568Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
