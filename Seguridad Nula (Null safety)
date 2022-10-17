@@ -1,0 +1,69 @@
+-- Seguridad Nula --
+Caracteristica muy importante en dart,
+Permite tener el control sobre todos los elementos para que puedan ser nulos
+si lo requiere o lograr evitar que los nulos se pongan siempre.
+
+ -- Elementos nulos y no nulos --
+    void main(){
+        int variable= 10;
+        
+        print(variable);
+        
+        print(variable+5);
+        
+        // (?) Permite decir que esta variable puede ser nulo.
+        String? palabra;
+        print(palabra);
+        
+        int? decena = 10;
+        print(decena);
+        //Si no ponemos el ? no aceptara los valores null.
+    
+        decena = null;
+        print(decena);
+    }
+
+ -- Asserts y Asignación --
+ Control más eficiente de la seguridad nula.
+ void main(){
+    int? docena = 10;
+     //No permite pero si ponemos así el (?) si agarrara.
+     List<int?> primos = [1,2,3,4,5, null];
+     
+     // con el (!) demustra que no va a ser nulo al final.
+     var suma = 10 + docena!;
+     
+     var suma2 = sumar(8,9);
+     print(suma2);
+     
+     Curso curso1 = Curso();
+     curso1.nombre = "Dart desde cero";
+     curso1.mostrar();
+   }
+   
+   class Curso{
+     // las variables pueden ser nullas
+    late String _nombre;
+     set nombre(String x)=> _nombre =x;
+     
+     void mostrar(){
+       print(_nombre);
+     }
+    
+     //Metadato required
+     void cambiarNombre(String x)
+   }
+   
+   
+   
+   //Se puede poner en una función como a los parametros.
+   //Si x es nulo entonces retorna nulo, sino la suma de x + y
+   int? sumar(int? x, int y){
+     if(x ==null){
+       return null;
+     }else{
+       return x + y;
+     }
+   }
+
+   

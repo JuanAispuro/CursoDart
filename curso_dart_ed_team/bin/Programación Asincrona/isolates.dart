@@ -3,6 +3,11 @@ import 'dart:isolate';
 
 Isolate? isolate;
 
+void crearIsolate(SendPort sendPort) {
+  //Crear un hilo secundario.
+  print("Estos datos se estan enviando desde el segundo isolate");
+}
+
 void main() {
   ReceivePort receivePort = ReceivePort();
 
@@ -11,7 +16,7 @@ void main() {
   Isolate.spawn((crearIsolate), receivePort.sendPort).then((value) {
     print(value);
     //Escuchamos el mensaje
-    receivePort.listen((message){
+    receivePort.listen((message) {
       print("Se estan escuchando datos");
       print(message);
       value.kill();
@@ -21,7 +26,4 @@ void main() {
 //ReceivePort recibir
 //Sendport Enviar
 //Metodo
-void crearIsolate(SendPort sendPort) {
-  //Crear un hilo secundario.
-  print("Estos datos se estan enviando desde el segundo isolate");
 }

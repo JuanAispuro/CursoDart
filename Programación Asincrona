@@ -1,0 +1,102 @@
+-- Que es la programacion asincrona --
+
+
+-- Timers --
+    import 'dart:async';
+
+    //Permite implementar la progrmamación asincrona los importantes son futuros y streams.
+    void main() {
+    //Constructor ()
+    const duration = Duration(seconds: 6);
+    //Primero imprir el programa.
+    print('Inicio del programa');
+    // Codigo despues del timer.
+    Timer timer = Timer(duration, () {
+        print("Se ejecuto el codigo luego de 2 segundos");
+    });
+    int controlador = 0;
+    //Timer periodico cada 2 segundos.
+    Timer timer2 = Timer.periodic(duration, (timer) {
+        if (controlador >= 5){
+        //cancelar la ejecución del timer.
+        timer.cancel();
+
+        } print("Se ejecuto el codigo luego de 2 segundos");
+    });
+    print("Se finalizo el programa.");
+    }
+
+
+--Isolates --
+import 'dart:async';
+import 'dart:isolate';
+
+Isolate? isolate;
+
+void crearIsolate(SendPort sendPort) {
+  //Crear un hilo secundario.
+  print("Estos datos se estan enviando desde el segundo isolate");
+}
+
+void main() {
+  ReceivePort receivePort = ReceivePort();
+
+  //Ejecutar un metodo en el hilo secundario.
+  //Creamos el hilo.
+  Isolate.spawn((crearIsolate), receivePort.sendPort).then((value) {
+    print(value);
+    //Escuchamos el mensaje
+    receivePort.listen((message) {
+      print("Se estan escuchando datos");
+      print(message);
+      value.kill();
+    });
+  });
+
+  -- Futuros, Async, Await --
+  Implementar los tiempos de espera y una vez que se terminen el código siga igual
+  Son conocidos como promesas en javascript.
+  Estos sirven más para hacer una petición en internet.
+  Se utilizan para tener esas esperas.
+    import 'tempCodeRunnerFile.dart';
+    //Asi se pone.
+    void main() async {
+    //Clase future tener elementos dentro del metodo y esperar a que finalice para otras cosas.
+    // async es tiene tiempo de espera.
+    //Aqui pondremos la respuesta
+    String responsel = "";
+    Future<String?> timer() async {
+        //Funciona como un timer
+        Future.delayed(Duration(seconds: 2), () {
+        responsel = "En el futuro";
+        });
+        return responsel;
+    }
+
+    print("Se inicia el programa.");
+    //realizamos la asignación cuando el timer finalice.
+    timer().then((value) => print(value));
+    print("Se finalizo el programa");
+    }
+
+-- streams, Async*, yield
+    //async* es de tipo stream
+    //Se crea un evento futuro.
+    Stream<int> contador(int x) async* {
+    for (int i = 0; i < x; i++) {
+        await Future.delayed(Duration(seconds: x), () {});
+        //yield retorna el valor que esta dentro del Stream
+        yield i;
+    }
+    }
+
+    //Es un contador que se ejecuta cada segundo.
+
+    void main() {
+    //listen escucha el Stream.
+    final x = contador(5).listen((event) {
+        print("El valor del stream es: $event");
+    });
+    //evento que se la pasara escuchando
+    }
+
